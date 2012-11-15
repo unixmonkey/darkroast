@@ -1,14 +1,13 @@
-<%
-
-@posts.each do |node|
-  item = node['data']
-
-%>
+<% @posts.each do |node|
+    item = node['data'] %>
     <div style="background-color:#ccc;">
-      <%#= node %>
+      <%= node %>
       <a href="<%= item['url'] %>"><%= item['title']%></a>
       <br>
-      Posted by: <%= item['author'] %>
+      Posted by: <%= item['author'] %><br>
+      Votes: up(<%= item['ups'] || 0 %>), down(<%= item['down'] || 0 %>)<br>
+      <a href="/comments/<%= item['subreddit_id'] %>">Comments</a>
+
     </div>
     <hr>
 <% end %>

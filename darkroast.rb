@@ -12,4 +12,10 @@ class App < E
       parsed_response['data']['children']
     render
   end
+
+  def comments(id)
+    @comments = HTTParty.get("http://www.reddit.com/r/programming/comments/#{id}.json")
+    render
+  end
+
 end
