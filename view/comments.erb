@@ -1,7 +1,15 @@
-<h2>Comments</h2>
-<% @comments.each do |body|; comment = body['data'] %>
-  <div>
-    <%= comment %>
+<h3><a href="<%= @post['url'] %>"><%= @post['title'] %></a></h3>
+<p>
+  <%#= @post %>
+  Votes: up(<%= @post['ups'] || 0 %>), down(<%= @post['downs'] || 0 %>)<br>
+</p>
+
+<h2>Comments (<%= @post['num_comments'] || 'None' %>)</h2>
+<% @comments.each do |node|; comment = node['data'] %>
+  <div style="background-color:#ccc;">
+    <%= comment['author'] %> said at <%= comment['created'] %><br>
+    <%= comment['body'] %><br>
+    Votes: up(<%= comment['ups'] || 0 %>), down(<%= comment['downs'] || 0 %>)<br>
     <hr>
   </div>
 <% end %>
