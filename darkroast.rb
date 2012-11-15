@@ -14,7 +14,7 @@ class App < E
   end
 
   def comments(id)
-    @comments = HTTParty.get("http://www.reddit.com/r/programming/comments/#{id}.json")
+    @comments = HTTParty.get("http://www.reddit.com/r/programming/comments/#{id}/.json")
     render
   end
 

@@ -1,1 +1,7 @@
-I am a comment
+<h2>Comments</h2>
+<% @comments.each do |body|; comment = body['data'] %>
+  <div>
+    <%= comment %>
+    <hr>
+  </div>
+<% end %>
