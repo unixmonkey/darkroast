@@ -6,6 +6,6 @@ class App < E
 
   def index
     # ...
-    "foo"
+    "<html><head></head><body>foobar</body></html>"
   end
 end
