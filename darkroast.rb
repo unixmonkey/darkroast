@@ -1,4 +1,5 @@
 require 'e'
+require 'httparty'
 
 class App < E
 

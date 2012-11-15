@@ -1,1 +1,8 @@
-This is the index
+<%
+
+response = HTTParty.get('http://www.reddit.com/r/programming.json')
+response.parsed_response['data']['children'].each do |item|
+
+%>
+    <p><%= item %></p>
+<% end %>
