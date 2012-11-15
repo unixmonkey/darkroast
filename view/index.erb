@@ -1,8 +1,14 @@
 <%
 
-response = HTTParty.get('http://www.reddit.com/r/programming.json')
-response.parsed_response['data']['children'].each do |item|
+@posts.each do |node|
+  item = node['data']
 
 %>
-    <p><%= item %></p>
+    <div style="background-color:#ccc;">
+      <%#= node %>
+      <a href="<%= item['url'] %>"><%= item['title']%></a>
+      <br>
+      Posted by: <%= item['author'] %>
+    </div>
+    <hr>
 <% end %>
